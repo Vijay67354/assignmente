@@ -1,0 +1,253 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.logo {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  background-color: blue;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: blue;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: -4px;
+  opacity: 0;
+  /* transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease; */
+}
+
+.nav li:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  /* transform: translateY(0); */
+}
+
+.nav .dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+}
+
+.nav .dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.button {
+  background-color: rgb(9, 9, 121);
+  padding: 10px 26px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  /* border: none; */
+  font-weight: 900;
+}
+
+.logoright {
+  width: 25px;
+  height: 25px;
+  color: white;
+  filter: brightness(0) invert(1);
+}
+
+/* Mobile Menu Styles */
+
+@media (max-width: 968px) {
+  .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #ef6c6c;
+    flex-direction: column;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+  }
+
+  .nav.active {
+    left: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav li {
+    width: 100%;
+  }
+
+  .navbar-toggler {
+    display: block;
+    background-color: #333;
+    color: white;
+    /* border: none; */
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 978px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: row;
+  }
+
+  .nav li {
+    width: auto;
+  }
+
+  .nav a {
+    padding: 10px 20px;
+  }
+
+  .nav li:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For screen widths greater than 981px */
+
+/* Background and Centered Text */
+.background-image {
+  background-image: url("https://img.freepik.com/free-photo/billboard-blank-outdoor-advertising-poster-blank-billboard-night-time-advertisement-street-light_1127-3066.jpg?t=st=1734086058~exp=1734089658~hmac=1046592dba2e46d6c285e83cf1a9a69d4de7a8b36b6a8aac0cbb940a85a23e3e&w=996");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-text {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/******************logo icon*********************/
+.logoiconcenter {
+  flex-wrap: wrap;
+  background-color: white;
+  gap: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 5px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  max-width: 1100px;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .logoiconcenter {
+    width: auto;
+    padding: 10px;
+  }
+}
+
+.logoicon {
+  max-height: 26px;
+  object-fit: contain;
+  max-width: 100%;
+  margin: 10px;
+}
+/**********************logo icon*************************/
+
+@media (max-width: 768px) {
+  .centered-text {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 791px) {
+  .nav a:hover {
+    color: rgb(9, 9, 121); /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+}
+
+/* On screens smaller than or equal to 790px, the hover effect will be removed */
+@media (max-width: 790px) {
+  .nav a:hover {
+    transform: none; /* Remove the zoom effect */
+  }
+}
+/* For screen widths between 320px and 768px (small screens) */
+@media (max-width: 968px) {
+  #close-nav {
+    display: block !important; /* Show on screens between 320px and 768px */
+    text-align: right;
+    padding: 10px;
+  }
+}
+
+/* For screen widths larger than 768px (desktop screens) */
+@media (min-width: 969px) {
+  #close-nav {
+    display: none !important; /* Hide on larger screens */
+  }
+}
+.nav ul li a {
+  text-decoration: none;
+}

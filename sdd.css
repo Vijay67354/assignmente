@@ -1,0 +1,251 @@
+/* Basic body style */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar style */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adding slight shadow for better visibility */
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 120px; /* Adjust the logo size as needed */
+  }
+  
+  /* Navigation List */
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation Links */
+  .nav li {
+    position: relative;
+  }
+  
+  /* Navbar links */
+  .nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for links */
+  
+  
+  /* Dropdown content */
+  .nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: blue;
+    min-width: 160px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+  }
+  
+  .nav li:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Dropdown items */
+  .nav .dropdown-content a {
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect on dropdown items */
+  .nav .dropdown-content a:hover {
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Navbar button style */
+  .button {
+    background-color: rgb(9, 9, 121);
+    padding: 10px 26px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-weight: 900;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+  
+  /* Button hover effect */
+  .button:hover {
+    background-color: rgb(9, 9, 160); /* Darker shade on hover */
+  }
+  
+  .logoright {
+    width: 25px;
+    height: 25px;
+    color: white;
+    filter: brightness(0) invert(1);
+  }
+  
+  #close-nav {
+    display: none; /* By default, it is hidden */
+  }
+  .button {
+    display: block;
+  }
+  @media (max-width: 348px) {
+    .button {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    #close-nav {
+      display: block; /* Only visible on screens <= 768px */
+      text-align: right;
+      padding: 10px;
+    }
+  }
+  /* Mobile Menu - Active/Inactive State */
+  @media (max-width: 988px) {
+    .nav {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #ef6c6c;
+      flex-direction: column;
+      padding-top: 50px;
+      transition: left 0.3s ease-in-out; /* Smooth sliding transition */
+    }
+  
+    .nav.active {
+      left: 0; /* Slide-in */
+    }
+  
+    .nav ul {
+      flex-direction: column;
+    }
+  
+    .nav li {
+      width: 100%;
+    }
+  
+    .navbar-toggler {
+      display: block;
+      background-color: #333;
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: 791px) {
+    .nav a:hover {
+      color: rgb(9, 9, 121); /* Change color on hover */
+      transform: scale(1.1); /* Slight zoom effect */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+    }
+  }
+  @media (max-width: 790px) {
+    .nav a:hover {
+    
+      transform: none; /* Remove the zoom effect */
+    }
+  }
+  /* Toggler button on mobile */
+  @media (max-width: 988px) {
+    .navbar-toggler {
+      display: block;
+    }
+    .nav .dropdown-content {
+      display: none;
+    }
+  
+    .nav .active-dropdown {
+      display: block;
+    }
+  }
+  
+  /* Desktop View */
+  @media (min-width: 990px) {
+    .navbar-toggler {
+      display: none;
+    }
+  
+    .nav {
+      display: flex;
+    }
+  
+    .nav ul {
+      flex-direction: row;
+    }
+  
+    .nav li {
+      width: auto;
+    }
+  
+    .nav a {
+      padding: 10px 20px;
+    }
+  
+    /* Dropdown effect on hover (desktop view) */
+    .nav li:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+    }
+  
+    .nav .dropdown-content:hover {
+      display: block;
+    }
+  }
+  
+  /* Background Image Styling */
+  .background-image {
+    background-image: url("https://img.freepik.com/free-photo/billboard-blank-outdoor-advertising-poster-blank-billboard-night-time-advertisement-street-light_1127-3066.jpg?t=st=1734086058~exp=1734089658~hmac=1046592dba2e46d6c285e83cf1a9a69d4de7a8b36b6a8aac0cbb940a85a23e3e&w=996");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -999;
+    transition: background 0.3s ease; /* Smooth background transition */
+  }
+  
+  /* Centered Text */
+  .centered-text {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+  }
+  
+  /* Adjust font size for smaller screens */
+  @media (max-width: 568px) {
+    .centered-text {
+      font-size: 20px;
+    }
+  }
+  

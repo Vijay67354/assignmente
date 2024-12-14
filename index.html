@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <navbar class="navbar">
+        <div class="logo">
+            <img src="/images/Screenshot 2024-12-13 125258.png" />
+        </div>
+        <div class="nav">
+            <i class="fa-regular fa-circle-xmark" id="close-nav"></i>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li>
+                    <a href="#" onclick="toggleDropdown(event)">
+                        Service <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <div class="dropdown-content" id="service-dropdown">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                    </div>
+                </li>
+                <li><a href="#">Iot Device</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Industries</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <button class="button">
+                Contact Us
+                <img src="/logo/right-up.png" style="margin-left: 8px" class="logoright" />
+            </button>
+        </div>
+
+        <button class="navbar-toggler" onclick="toggleMenu()">&#9776;</button>
+    </navbar>
+
+    <div class="background-image">
+        <div class="centered-text">AUTOMATE YOUR</div>
+    </div>
+    <div class="logoiconcenter">
+        <img src="/logo/fleetx-software.png" class="logoicon" />
+        <img src="/logo/logonav.png" class="logoicon" />
+        <img src="/logo/ncubate-logo.png" class="logoicon" />
+        <img src="/logo/sbi.png" class="logoicon" />
+        <img src="/logo/wheeleye.png" class="logoicon" />
+        <img src="/logo/Agastya.png" class="logoicon" />
+        <img src="/logo/blackbuck-logo.png" class="logoicon" />
+      </div>
+  
+    <script src="mobilemenu.js"></script>
+    <script src="counter.js"></script>
+</body>
+
+</html>

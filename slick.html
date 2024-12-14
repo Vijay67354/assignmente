@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">  
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">  
+      
+   
+</head>
+<style>
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: 500;
+        text-align: center;
+        position: relative;
+        margin-bottom: 60px;
+    }
+    h1:after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 4px;
+        background-color: #FF8159;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .logo-slider .item {
+        background-color: #fff;
+        box-shadow: 0 4px 5px #cacaca;
+        border-radius: 8px;
+        padding: 15px;
+        border: 2px solid #111;
+    }
+    .logo-slider .slick-slide {
+        margin: 15px;
+    }
+    .slick-dots li.slick-active button:before {
+        color: #ff5722;
+    }
+    .slick-dots li button:before {
+        font-size: 12px;
+     }
+    .slick-next:before,
+    .slick-prev:before {
+        color: #ff8159;
+        font-size: 24px;
+    }
+    .item:hover {
+        display: block;
+        transition: all ease 0.3s;
+        transform: scale(1.1) translateY(-5px);
+    }
+</style>
+<body>
+   <div class="container">
+       <h1>Our Popular Brands</h1>
+       <div class="logo-slider">
+           <div class="imaglog">
+               <img src="/images/panic.png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+           <div class="imaglog">
+               <img src="/images/watsoo-prithvi-ais-140-advanced-gps-tracking-system.png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+           <div class="imaglog">
+               <img src="/images/19-192227_gps-tracker-png-icon-transparent-png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+           <div class="imaglog">
+               <img src="/images/Screenshot 2024-12-13 125258.png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+           <div class="imaglog">
+               <img src="/images/watsoo-prithvi-ais-140-advanced-gps-tracking-system.png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+           <div class="imaglog">
+               <img src="/images/watsoo-prithvi-ais-140-advanced-gps-tracking-system.png" class="paniclogo" />
+               <h1>Panic Button</h1>
+               <p>Guard your fleets by integrating SOS, panic button and so an emergency alert system.</p>
+               <button class="learn-more-btn">Learn More</button>
+           </div>
+       </div>
+   </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $('.logo-slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            autoplaySpeed: 2000,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 560,  // New breakpoint for 560px
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+</html>

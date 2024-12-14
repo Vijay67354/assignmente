@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+    }
+
+    .logo {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: none !important;
+    }
+
+    .nav li {
+      position: relative;
+    }
+
+    .nav a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      font-size: 16px;
+    }
+
+    .nav a:hover {
+      background-color: blue;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: blue;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: -4px;
+      opacity: 0;
+      /* transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease; */
+    }
+
+    .nav li:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      /* transform: translateY(0); */
+    }
+
+    .nav .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+    }
+
+    .nav .dropdown-icon {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+
+    .button {
+      background-color: rgb(9, 9, 121);
+      padding: 10px 26px;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      /* border: none; */
+      font-weight: 900;
+    }
+
+
+    .logoright {
+      width: 25px;
+      height: 25px;
+      color: white;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Mobile Menu Styles */
+  
+    @media (max-width: 968px) {
+
+
+      .nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #ef6c6c;
+        flex-direction: column;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+      }
+
+      .nav.active {
+        left: 0;
+      }
+
+      .nav ul {
+        flex-direction: column;
+      }
+
+      .nav li {
+        width: 100%;
+      }
+
+      .navbar-toggler {
+        display: block;
+        background-color: #333;
+        color: white;
+        /* border: none; */
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+    }
+
+    @media (min-width: 978px) {
+      .navbar-toggler {
+        display: none;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .nav ul {
+        flex-direction: row;
+      }
+
+      .nav li {
+        width: auto;
+      }
+
+      .nav a {
+        padding: 10px 20px;
+      }
+
+      .nav li:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+
+  
+
+  /* For screen widths greater than 981px */
+  
+    /* Background and Centered Text */
+    .background-image {
+      background-image: url("https://img.freepik.com/free-photo/billboard-blank-outdoor-advertising-poster-blank-billboard-night-time-advertisement-street-light_1127-3066.jpg?t=st=1734086058~exp=1734089658~hmac=1046592dba2e46d6c285e83cf1a9a69d4de7a8b36b6a8aac0cbb940a85a23e3e&w=996");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .centered-text {
+      color: rgb(0, 0, 0);
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .centered-text {
+        font-size: 30px;
+      }
+      
+    }
+
+    @media (min-width: 791px) {
+  .nav a:hover {
+    color: rgb(9, 9, 121); /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+}
+
+/* On screens smaller than or equal to 790px, the hover effect will be removed */
+@media (max-width: 790px) {
+  .nav a:hover {
+ 
+    transform: none; /* Remove the zoom effect */
+  }
+}
+
+.nav ul li a{
+    text-decoration: none;
+}
+  </style>
+<style>
+
+    /* For screen widths between 320px and 768px (small screens) */
+    @media (max-width: 968px) {
+      #close-nav {
+        display: block !important; /* Show on screens between 320px and 768px */
+        text-align: right;
+        padding: 10px;
+      }
+    }
+  
+    /* For screen widths larger than 768px (desktop screens) */
+    @media (min-width: 969px) {
+      #close-nav {
+        display: none !important; /* Hide on larger screens */
+      }
+    }
+  </style>
+  
+  <body>
+    <navbar class="navbar">
+      <div class="logo">
+        <img src="/images/Screenshot 2024-12-13 125258.png" />
+      </div>
+      <div class="nav">
+        <i class="fa-regular fa-circle-xmark" id="close-nav"></i>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li>
+            <a href="#" onclick="toggleDropdown(event)">
+              Service <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-content" id="service-dropdown">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+            </div>
+          </li>
+          <li><a href="#">Iot Device</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Industries</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <button class="button">
+          Contact Us
+          <img
+            src="/logo/right-up.png"
+            style="margin-left: 8px"
+            class="logoright"
+          />
+        </button>
+      </div>
+
+      <button class="navbar-toggler" onclick="toggleMenu()">&#9776;</button>
+    </navbar>
+
+    <div class="background-image">
+      <div class="centered-text">AUTOMATE YOUR</div>
+    </div>
+
+    <script>
+      // Toggle Mobile Menu
+      function toggleMenu() {
+        const nav = document.querySelector(".nav");
+        nav.classList.toggle("active");
+        const closeIcon = document.getElementById("close-nav");
+
+        // Toggle the visibility of the close icon when the menu is open or closed
+        if (nav.classList.contains("active")) {
+          closeIcon.style.display = "block";
+        } else {
+          closeIcon.style.display = "none";
+        }
+      }
+
+      // Close the nav menu when the close icon is clicked
+      document
+        .getElementById("close-nav")
+        .addEventListener("click", function () {
+          document.querySelector(".nav").classList.remove("active");
+          this.style.display = "none"; // Hide the close icon
+        });
+
+      // Toggle Dropdown Menu for Mobile (Service)
+      function toggleDropdown(event) {
+        const dropdown = document.getElementById("service-dropdown");
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        } else {
+          dropdown.style.display = "block";
+        }
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        const dropdown = document.getElementById("service-dropdown");
+        const dropdownLink = document.querySelector('a[href="#"]'); // The Service link itself
+
+        // If the click is outside the dropdown or the service link, hide the dropdown
+        if (!dropdown.contains(e.target) && e.target !== dropdownLink) {
+          dropdown.style.display = "none";
+        }
+      });
+
+      // Stop the dropdown from closing if clicking inside the dropdown itself
+      document
+        .getElementById("service-dropdown")
+        .addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+    </script>
+  </body>
+</html>
